@@ -88,7 +88,7 @@ object Classifier {
     val evaluator = { new MulticlassClassificationEvaluator()
       .setLabelCol(stringIndexer.getOutputCol)
       .setPredictionCol(mlp.getPredictionCol)
-      .setMetricName("precision")
+      .setMetricName("accuracy")
     }
     val precision = evaluator.evaluate(result)
 
